@@ -6,8 +6,7 @@ const addUser = user =>
       reject('Empty username or email')
       return false
     }
-    store.add(user)
-    resolve(user)
+    store.add(user).then((res) => resolve(res))
   })
 
 const getUsers = (filterUser) =>
