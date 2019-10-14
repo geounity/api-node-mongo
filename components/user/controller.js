@@ -1,13 +1,10 @@
 const store = require('./store')
 
-const addUser = name =>
+const addUser = user =>
   new Promise((resolve, reject) => {
-    if (!name) {
-      reject('Invalid name')
+    if (!user.username || !user.email) {
+      reject('Empty username or email')
       return false
-    }
-    const user = {
-      name
     }
     store.add(user)
     resolve(user)
